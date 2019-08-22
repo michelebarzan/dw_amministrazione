@@ -5,6 +5,6 @@
 	$hour = time() + 3600 * 24 * 30;
 	setcookie('username',"no", $hour);
 	setcookie('password', "no", $hour);
-	$server=  $_SERVER['SERVER_ADDR'].":".$_SERVER['SERVER_PORT'];
+	$server=  $_SERVER['SERVER_NAME'];
 	echo '<script>location.href="http://'.$server.'/dw_login/login.php";</script>';
 ?>

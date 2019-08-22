@@ -82,7 +82,7 @@
 					<?php getNomeCognome($conn,$_SESSION['Username']); ?>
 				</div>
 				<?php
-				$server=  $_SERVER['SERVER_ADDR'].":".$_SERVER['SERVER_PORT'];
+				$server=$_SERVER['SERVER_NAME'];
 				echo '<div id="userSettingsRow2">';
 					echo '<a id="userSettingsCambiaPassword" href="http://'.$server.'/dw_login/cambiaPassword.php">Cambia password</a>';
 				echo '</div>';
