@@ -392,7 +392,7 @@
 			<div id="nomeFileLabelGeneralNumbering"></div>
 			<div id="nomeFileGeneralNumbering"></div>
 		</div>
-		<div class="absoluteContainer2" style="margin-top:100px">
+		<div class="absoluteContainer2" style="margin-top:350px">
 			<table id="myTableImportazioneGeneralNumbering"></table>
 		</div>
 		<div id="footer">
