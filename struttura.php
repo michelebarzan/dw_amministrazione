@@ -106,6 +106,7 @@
 		<input type="button" value="Gestione utenti" data-toggle='tooltip' title='Gestione utenti' class="btnGoToPath" onclick="goToPath('adminCenter.php')" />
 		<input type="button" value="Gestione general numbering" data-toggle='tooltip' title='Gestione general numbering' class="btnGoToPath" onclick="goToPath('gestioneGeneralNumbering.php')" />
 		<input type="button" value="Importazione general numbering" data-toggle='tooltip' title='Importazione general numbering' class="btnGoToPath" onclick="goToPath('importazioneGeneralNumbering.php')" />
+		<input type="button" value="Importazione database txt" data-toggle='tooltip' title='Importazione database txt' class="btnGoToPath" onclick="goToPath('importazioneDatabaseTxt.php')" />
 		<input type="button" value="Gestione commesse" data-toggle='tooltip' title='Gestione commesse' class="btnGoToPath" onclick="goToPath('gestioneCommesse.php')" />
 	</div>
 	

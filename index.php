@@ -35,6 +35,10 @@
 						<i class="fal fa-file-upload fa-2x"></i>
 						<span>Importazione<br>general numbering</span>
 					</div>
+					<div class="homepageLink" title="Importa un nuovo general numbering o modifica i dati esistenti" onclick="gotopath('importazioneDatabaseTxt.php')">
+						<i class="fal fa-file-import fa-2x"></i>
+						<span>Importazione<br>database txt</span>
+					</div>
 					<div class="homepageLink" title="Gestisci le anagrafiche delle commesse" onclick="gotopath('gestioneCommesse.php')">
 						<i class="fal fa-ship fa-2x"></i>
 						<span>Gestione<br>commesse</span>
