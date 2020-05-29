@@ -85,7 +85,7 @@
                     }
                 }
                 
-                $file = fopen("//DESKTOP-L5K6JOC/files/dw/$tipo/regdef/$fileName", "r") or die("error - //DESKTOP-L5K6JOC/files/dw/$tipo/regdef/$fileName");
+                $file = fopen("files/txt/$tipo/regdef/$fileName", "r") or die("error");
                 while(!feof($file))
                 {
                     $rowString=fgets($file);
