@@ -2,7 +2,7 @@
 <?php
 
     ini_set('memory_limit', '-1');
-    set_time_limit(300000000000);
+    set_time_limit(3000);
 
     include "connessione.php";
 
