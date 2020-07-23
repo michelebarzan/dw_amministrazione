@@ -10,8 +10,6 @@
 
     $start = microtime(true);
 
-    $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf"];
-
     $missingTables=[];
     $skipTables=[];
 
@@ -25,11 +23,19 @@
         {
             $tipo="mf";
             $suffisso="_mf";
+            $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf"];
         }
         if($database=="Bifacciale")
         {
             $tipo="bf";
             $suffisso="_bf2";
+            $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf","cesoiati_r","sviluppi_r","pannellil_r","dibces_r","dibpan_r","dibsvi_r"];
+        }
+        if($database=="Monobifacciale")
+        {
+            $tipo="mb";
+            $suffisso="_mb";
+            $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf","cesoiati_r","sviluppi_r","pannellil_r","dibces_r","dibpan_r","dibsvi_r","profili"];
         }
 
         foreach($tables as $table)
@@ -140,7 +146,7 @@
                             //$queries è un array di array contenenti query, è un array associativo con indice il valore della prima colonna
                             if(!isset($queries[$valoreColonna0]) || $queries[$valoreColonna0]==null)
                                 $queries[$valoreColonna0]=[];
-                            array_push($queries[$valoreColonna0],"INSERT INTO [$table] ($columns_string) VALUES (".implode(',',$rowArray).")");
+                            array_push($queries[$valoreColonna0],"INSERT INTO [".$table.$suffisso."] ($columns_string) VALUES (".implode(',',$rowArray).")");
                         }
                     }
                     $rowN++;
@@ -158,7 +164,7 @@
                         $r2=sqlsrv_query($conn,$q2);
                         if($r2==FALSE)
                         {
-                            array_push($errorMessages,"<b>Tabella: </b>$database.$table<br><b>Query: </b>".$q2."<br>");
+                            array_push($errorMessages,"<b>Tabella: </b>$database.$table.$suffisso<br><b>Query: </b>".$q2."<br>");
                             $righeNonInserite++;
                         }
                         else

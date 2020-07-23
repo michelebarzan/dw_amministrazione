@@ -1,0 +1,2 @@
+CODRIN______	DESCRIZIONE________	CODMAT______	QNT	UM__
+"RB-O00000"	"Rinforzo DI RIFCOD"	"000000"	0	"Nr"

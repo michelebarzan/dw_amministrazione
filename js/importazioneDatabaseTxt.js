@@ -5,7 +5,7 @@ var databases;
     var icon=button.getElementsByTagName("i")[0];
     icon.className="fad fa-spinner-third fa-spin";
 
-    databases=["Monofacciale","Bifacciale"];
+    databases=["Monofacciale","Bifacciale","Monobifacciale"];
 
     Swal.fire
     ({
@@ -127,7 +127,7 @@ function getPopupScegliTipoFile(button)
 
         document.body.appendChild(selectOuterContainer);
 
-        databases=["Monofacciale","Bifacciale"];
+        databases=["Monofacciale","Bifacciale","Monobifacciale"];
 
         databases.forEach(function(database)
         {
@@ -395,7 +395,7 @@ function getPopupScegliDatabase(button)
 
         document.body.appendChild(selectOuterContainer);
 
-        databases=["Monofacciale","Bifacciale"];
+        databases=["Monofacciale","Bifacciale","Monobifacciale"];
 
         databases.forEach(function(database)
         {

@@ -7,6 +7,8 @@
         $db="mf";
     if($database=="Bifacciale")
         $db="bf";
+    if($database=="Monobifacciale")
+        $db="mb";
     
     define ('SITE_ROOT', realpath(dirname(__FILE__)));
     //define ('SITE_ROOT', 'C:\\xampp\\htdocs\\');

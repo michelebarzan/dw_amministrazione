@@ -1,0 +1,3 @@
+CODCAB______	UM__	DESCRIZIONE_____
+"Disegno14"	"NR"	"Assieme pareti"	"A"	2160	1.3	16.98	""
+"C6308MK054"	"NR"	"Assieme pareti"	"A"	2160	2.6	28.77	"E"

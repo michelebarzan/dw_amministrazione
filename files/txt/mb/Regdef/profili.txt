@@ -1,0 +1,3 @@
+"Codpro"	"descrizione"	"Finituta"	"lunghezza"
+"PR-00000"	"profilo di riferimnto"	"finitura"	22007"CF-00001"	"Profilo DEM216 NN l:6"	"DEM216"	"NN"	6
+"CF-00001"	"Profilo DEM216 NN l:6"	"DEM216"	"NN"	6

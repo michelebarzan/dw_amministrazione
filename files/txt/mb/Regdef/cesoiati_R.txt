@@ -1,0 +1,10 @@
+CODCES______	DESCRIZIONE______________________________	FINITURA____	LUNG_	HALT	SPESS	MQ____	UM__
+"CP-00000"	"Pannello cesoiato DI RIFERIMENTO   COD"	"ZZ"	0	2200	0	825220	"Nr"
+"CP-00001"	"Retro cesoiato "	"lam2"	588	2183.2	0.3	1283722	"Nr"
+"CP-00002"	"Retro cesoiato "	"lam2"	351.8	2183.2	0.3	768050	"Nr"
+"CP-00003"	"Retro cesoiato "	"lam2"	306.5	2183.2	0.3	669151	"Nr"
+"CP-00004"	"Retro cesoiato "	"lam2"	291.9	2183.2	0.3	637276	"Nr"
+"CP-00005"	"Retro cesoiato "	"lam2"	277.7	2183.2	0.3	606275	"Nr"
+"CP-00006"	"Retro cesoiato "	"lam2"	77.7	2183.2	0.3	169635	"Nr"
+"CP-00007"	"Retro cesoiato "	"lam2"	557.2	2183.2	0.3	1216479	"Nr"
+"CP-00008"	"Retro cesoiato "	"lam2"	137.2	2183.2	0.3	299535	"Nr"

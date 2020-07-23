@@ -1,0 +1,13 @@
+CODPAN______	DESCRIZIONE	LUNG1	LUNG2	PIEGA1	PIEGA2	SPESS	HALT	ANG	FINIT	FORI 	___	RIGHE	TIPO	UM__
+"LP-00000"	"DI RIFCOD"	0	0	0	0	0	0	0	"A"	"No"	"_"	1	"SPD"	"Nr"
+"LP-00001"	"Pannello retro"	594	0	0.3	2160	0	"A"	"Si"	"_"	2	"STD"	"Nr"
+"LP-00002"	"Pannello retro"	594	0	0.3	2160	0	"A"	"Si"	"_"	2	"STD"	"Nr"
+"LP-00003"	"Pannello retro"	594	0	0.3	2160	0	"A"	"Si"	"_"	2	"STD"	"Nr"
+"LP-00004"	"Pannello retro"	594	0	0.3	2160	0	"A"	"No"	"_"	1	"STD"	"Nr"
+"LP-00005"	"Angolo retro"	238.6	113.2	0.3	2160	90	"A"	"No"	"_"	1	"SPC"	"Nr"
+"LP-00006"	"Angolo retro"	67.8	238.6	0.3	2160	90	"A"	"No"	"_"	1	"STD"	"Nr"
+"LP-00007"	"Angolo retro"	224	67.8	0.3	2160	90	"A"	"No"	"_"	1	"STD"	"Nr"
+"LP-00008"	"Angolo retro"	53.7	224	0.3	2160	90	"A"	"No"	"_"	1	"STD"	"Nr"
+"LP-00009"	"Angolo retro"	24	53.7	0.3	2160	270	"A"	"No"	"_"	1	"STD"	"Nr"
+"LP-00010"	"Pannello retro"	563.2	0	0.3	2160	0	"A"	"No"	"_"	1	"STD"	"Nr"
+"LP-00011"	"Angolo retro"	113.2	24	0.3	2160	90	"A"	"No"	"_"	1	"STD"	"Nr"
