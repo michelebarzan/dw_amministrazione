@@ -1,4 +1,5 @@
 CODCAB______	UM__	DESCRIZIONE_____
-"Disegno4"	"NR"	"Assieme pareti"	"A"	2160	1.3	14.39	""
-"Disegno1"	"NR"	"Assieme pareti"	"A"	2160	1.3	14.39	""
-"Disegno2"	"NR"	"Assieme pareti"	"A"	2160	1.3	14.39	""
+"C6308MK054"	"NR"	"Assieme pareti"	"B"	2190	18.1	200.72	"E"
+"Disegno3"	"NR"	"Assieme pareti"	"A"	2190	1.3	14.59	""
+"Disegno1"	"NR"	"Assieme pareti"	"A"	2190	1.3	14.59	""
+"Disegno2"	"NR"	"Assieme pareti"	"A"	2190	1.3	17.21	""

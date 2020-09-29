@@ -2,7 +2,7 @@
 <?php
 
     ini_set('memory_limit', '-1');
-    set_time_limit(3000);
+    set_time_limit(6000);
 
     include "connessione.php";
 
@@ -29,7 +29,7 @@
         {
             $tipo="bf";
             $suffisso="_bf2";
-            $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf","cesoiati_r","sviluppi_r","pannellil_r","dibces_r","dibpan_r","dibsvi_r"];
+            $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf","cesoiati_r","sviluppi_r","pannellil_r","dibces_r","dibpan_r","dibsvi_r","profili"];
         }
         if($database=="Monobifacciale")
         {
@@ -48,7 +48,7 @@
             {
                 $columns=[];
                 $data_types=[];
-                $q7="SELECT COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'$table$suffisso' AND COLUMN_NAME != 'UTENTE' AND COLUMN_NAME != 'tmp' AND COLUMN_NAME != 'id'";
+                $q7="SELECT COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'$table".$suffisso."' AND COLUMN_NAME != 'UTENTE' AND COLUMN_NAME != 'tmp' AND COLUMN_NAME != 'id'";
                 $r7=sqlsrv_query($conn,$q7);
                 if($r7==FALSE)
                 {
@@ -77,7 +77,7 @@
                 $columns0file=[];
 
                 $column0=$columns[0];
-                $q8="SELECT DISTINCT [$column0] FROM ".$table.$suffisso;
+                $q8="SELECT DISTINCT [$column0] FROM $table$suffisso";
                 $r8=sqlsrv_query($conn,$q8);
                 if($r8==FALSE)
                 {
@@ -87,6 +87,7 @@
                 {
                     while($row8=sqlsrv_fetch_array($r8))
                     {
+						$queries[$row8[$columns[0]]]=[];
                         array_push($columns0array,$row8[$columns[0]]);
                     }
                 }
@@ -98,12 +99,12 @@
                     $rowString=substr($rowString,0,strlen($rowString)-2);
                     $rigaCheck=strtolower($rowString);
                     $colonnaCheck=strtolower($columns[0]);
-                    //controllo che la riga non sia l'intestazione
+					//controllo che la riga non sia l'intestazione
                     if (strpos($rigaCheck, $colonnaCheck) === false) 
                     {
                         $rowString=str_replace(chr(34),"'",$rowString);
                         $rowArray=explode(chr(9),$rowString);
-                        //controllo di non aver piu colonne nella tabella che nella rigab del txt
+						//controllo di non aver piu colonne nella tabella che nella rigab del txt
                         if(sizeof($columns)>sizeof($rowArray))
                         {
                             $columnsL=sizeof($columns);
@@ -115,7 +116,7 @@
                                 array_push($rowArray,"NULL");
                             }
                         }
-                        //controllo di non aver piu colonne nella riga del txt che nella tabella 
+						//controllo di non aver piu colonne nella riga del txt che nella tabella 
                         if(sizeof($rowArray)<sizeof($columns))
                         {
                             $columnsL=sizeof($columns);
@@ -124,10 +125,10 @@
                             $diff=$rowArrayL-$columnsL;
                             array_splice($array, count($array) - $diff, $diff);
                         }
-                        //se il numero di colonnne e uguale
+						//se il numero di colonnne e uguale
                         if(sizeof($rowArray)===sizeof($columns))
                         {        
-                            //controllo i valori dell' array, se sono nulli o altri caratteri li sistemo
+							//controllo i valori dell' array, se sono nulli o altri caratteri li sistemo
                             for ($y=0; $y < sizeof($rowArray); $y++)
                             {
                                 $item=$rowArray[$y];
@@ -142,11 +143,11 @@
 
                             $valoreColonna0=str_replace("'","",$rowArray[0]);
                             array_push($columns0file,$valoreColonna0);
-                            
-                            //$queries è un array di array contenenti query, è un array associativo con indice il valore della prima colonna
-                            if(!isset($queries[$valoreColonna0]) || $queries[$valoreColonna0]==null)
-                                $queries[$valoreColonna0]=[];
-                            array_push($queries[$valoreColonna0],"INSERT INTO [".$table.$suffisso."] ($columns_string) VALUES (".implode(',',$rowArray).")");
+							
+							//$queries è un array di array contenenti query, è un array associativo con indice il valore della prima colonna
+							if(!isset($queries[$valoreColonna0]) || $queries[$valoreColonna0]==null)
+								$queries[$valoreColonna0]=[];
+							array_push($queries[$valoreColonna0],"INSERT INTO [".$table.$suffisso."] ($columns_string) VALUES (".implode(',',$rowArray).")");
                         }
                     }
                     $rowN++;
@@ -154,29 +155,28 @@
                 fclose($file);
 
                 $codiciDaInserire=array_diff($columns0file,$columns0array);
-                $codiciDaInserire=array_unique($codiciDaInserire);
-                
+				$codiciDaInserire=array_unique($codiciDaInserire);
+				
                 foreach($codiciDaInserire as $codice)
                 {
                     $queries_list=$queries[$codice];
-                    foreach($queries_list as $q2)
-                    {
-                        $r2=sqlsrv_query($conn,$q2);
-                        if($r2==FALSE)
-                        {
-                            array_push($errorMessages,"<b>Tabella: </b>$database.$table.$suffisso<br><b>Query: </b>".$q2."<br>");
-                            $righeNonInserite++;
-                        }
-                        else
-                        {
-                            $righeInserite++;
-                        }
-                    }
+					foreach($queries_list as $q2)
+					{
+						$r2=sqlsrv_query($conn,$q2);
+						if($r2==FALSE)
+						{
+							array_push($errorMessages,"<b>Tabella: </b>$database.$table<br><b>Query: </b>".$q2."<br>");
+							$righeNonInserite++;
+						}
+						else
+						{
+							$righeInserite++;
+						}
+					}
                 }
             }
         }
     }
-
     $time_elapsed_secs = microtime(true) - $start;
     $time_elapsed_secs = number_format($time_elapsed_secs,1);
 
@@ -184,97 +184,10 @@
     $arrayResponse["righeNonInserite"]=$righeNonInserite;
     $arrayResponse["errorMessages"]=$errorMessages;
     $arrayResponse["time_elapsed_secs"]=$time_elapsed_secs;
+	
+	//$arrayResponse["codiciDaInserire"]=$codiciDaInserire;
+	$arrayResponse["queries"]=$queries;
 
     echo json_encode($arrayResponse);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*while(!feof($file))
-                {
-                    $rowString=fgets($file);
-                    $rowString=substr($rowString,0,strlen($rowString)-2);
-                    $rigaCheck=strtolower($rowString);
-                    $colonnaCheck=strtolower($columns[0]);
-                    if (strpos($rigaCheck, $colonnaCheck) === false) 
-                    {
-                        $rowString=str_replace(chr(34),"'",$rowString);
-                        $rowArray=explode(chr(9),$rowString);
-                        if(sizeof($columns)>sizeof($rowArray))
-                        {
-                            $columnsL=sizeof($columns);
-                            $rowArrayL=sizeof($rowArray);
-
-                            $diff=$columnsL-$rowArrayL;
-                            for ($x=0; $x < $diff; $x++) 
-                            { 
-                                array_push($rowArray,"NULL");
-                            }
-                        }
-                        if(sizeof($rowArray)<sizeof($columns))
-                        {
-                            $columnsL=sizeof($columns);
-                            $rowArrayL=sizeof($rowArray);
-
-                            $diff=$rowArrayL-$columnsL;
-                            array_splice($array, count($array) - $diff, $diff);
-                        }
-
-                        if(sizeof($rowArray)===sizeof($columns))
-                        {                           
-                            for ($y=0; $y < sizeof($rowArray); $y++)
-                            {
-                                $item=$rowArray[$y];
-                                if($item=="" || $item==" " || $item==null || strlen($item)==0 || ord($item)==13)
-                                {
-                                    if(($data_types[$y]=="decimal" || $data_types[$y]=="int" || $data_types[$y]=="real" || $data_types[$y]=="smallint"))
-                                        $rowArray[$y]=0;
-                                    else
-                                        $rowArray[$y]="''";
-                                }
-                            }
-
-                            $valoreColonna0=str_replace("'","",$rowArray[0]);
-                            array_push($columns0file,$valoreColonna0);
-
-                            $queries[$valoreColonna0]="INSERT INTO [".$table.$suffisso."] ($columns_string) VALUES (".implode(',',$rowArray).")";
-                        }
-                    }
-                    $rowN++;
-                }
-                fclose($file);
-
-                $codiciDaInserire=array_diff($columns0file,$columns0array);
-                foreach($codiciDaInserire as $codice)
-                {
-                    $q2=$queries[$codice];
-
-                    $r2=sqlsrv_query($conn,$q2);
-                    if($r2==FALSE)
-                    {
-                        array_push($errorMessages,"<b>Tabella: </b>$database.$table<br><b>Query: </b>".$q2."<br>");
-                        $righeNonInserite++;
-                    }
-                    else
-                    {
-                        $righeInserite++;
-                    }
-                }
-            }
-        }
-    }*/
 ?>

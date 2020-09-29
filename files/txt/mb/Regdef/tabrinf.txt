@@ -1,2 +1,7 @@
 CODRIN______	DESCRIZIONE________	CODMAT______	QNT	UM__
-"RB-O00000"	"Rinforzo DI RIFCOD"	"000000"	0	"Nr"
+"RB-00000"	"Rinforzo DI RIFCOD"	"R1"	595	80	"HOR"	"Nr"
+"RB-00001"	"Rinforzo pannello"	"R1"	595	80	"HOR"	"Nr"
+"RB-00002"	"Rinforzo pannello"	"R1"	2155	80	"VER"	"Nr"
+"RB-00003"	"Rinforzo pannello"	"R1"	195	80	"HOR"	"Nr"
+"RB-00004"	"Rinforzo pannello"	"R1"	295	80	"HOR"	"Nr"
+"RB-00005"	"Rinforzo pannello"	"R69"	2155	80	"VER"	"Nr"

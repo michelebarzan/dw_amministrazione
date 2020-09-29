@@ -302,6 +302,7 @@ function checkResponseImportaDbTecnico(response)
 {
     try {
         var arrayResponse=JSON.parse(response);
+        console.log(arrayResponse);
         var ul=document.createElement("ul");ul.setAttribute("style","text-align:left");
         var li=document.createElement("li");
         li.innerHTML="<b>Righe inserite: </b>"+arrayResponse["righeInserite"];
