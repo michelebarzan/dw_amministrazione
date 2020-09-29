@@ -54,3 +54,5 @@
 "Disegno2"	"PB-00037"	1	"0"
 "Disegno2"	"DEM231"	2	"0"
 "Disegno2"	"F1400-284"	1	"0"	"asda"	"dasd"	"2000"	"2160"	"7"	"a"	"b15"
+"Disegno2"	"F1300-284"	1	"0"	"asda"	"dasd"	"2000"	"2160"	"7"	"a"	"b15"
+"Disegno2"	"F1423-284"	1	"0"	"asda"	"dasd"	"2000"	"2160"	"7"	"a"	"b15"
