@@ -22,7 +22,7 @@
         if($database=="Monofacciale")
         {
             $tipo="mf";
-            $suffisso="_mf";
+            $suffisso="";
             $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf"];
         }
         if($database=="Bifacciale")
