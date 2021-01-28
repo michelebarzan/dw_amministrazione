@@ -23,7 +23,7 @@
         {
             $tipo="mf";
             $suffisso="";
-            $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf"];
+            $tables=["cabine","cabpan","cesoiati","dibces","dibldr","dibpan","dibpas","dibrin","dibsvi","mater","pannelli","pannellil","sviluppi","tabrinf","profili"];
         }
         if($database=="Bifacciale")
         {

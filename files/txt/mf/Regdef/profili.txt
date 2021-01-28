@@ -1,0 +1,15 @@
+"Codpro"	"descrizione"	"Finituta"	"lunghezza"
+"DM-00000"	"Profilo di riferimento"	"DEM297"	"Grezzo"	800	52
+"DM-00014"	"Profilo DEM297"	"DEM297"	"Grezzo"	800	52
+"DM-00015"	"Profilo Promaflex"	"Promaflex"	"Grezzo"	2100	52
+"DM-00016"	"Profilo Ultimate10x34"	"Ultimate10x34"	"Grezzo"	2160	100
+"DM-00017"	"Profilo DEM216"	"DEM216"	"NN"	2200	0
+"DM-00018"	"Profilo DEM267"	"DEM267"	"NN"	2200	0
+"DM-00019"	"Profilo DEM018"	"DEM018"	"NN"	2200	0
+"DM-00020"	"Profilo 65465"	"65465"	"Grezzo"	40	0
+"DM-00021"	"Profilo DEM265"	"DEM265"	"Grezzo"	40	0
+"DM-00022"	"Profilo DEM297"	"DEM297"	"Grezzo"	800	0
+"DM-00023"	"Profilo DEM297"	"DEM297"	"Grezzo"	801	0
+"DM-00024"	"Profilo DEM018"	"DEM018"	"Rosso"	2200	0
+"DM-00025"	"Profilo DEM216"	"DEM216"	"grezzo"	2200	0
+"DM-00026"	"Profilo DEM267"	"DEM267"	"grezzo"	2200	0
